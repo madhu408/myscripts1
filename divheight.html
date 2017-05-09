@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Thirumalai-Window size</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+        <style type="text/css">
+    <!--      .height100{ height:100px;}
+		  .height200{ height:100px;}
+		#left{
+   
+   
+    width:200px;
+    
+    background:white;
+   
+}
+.left{
+    color:#fff;
+   overflow-y:scroll;
+   background:#000;
+} -->
+
+html, body{
+height:100%;
+margin:0px;
+padding:0px;
+overflow:hidden;
+}
+
+#header{
+height:100px;
+background:#ff6600;
+}
+#content{
+ background:#000;
+ overflow-y:scroll;
+<!--  height:calc(100% - 100px); -->
+}
+#bottom{ height:100px; background:#757575;}
+        </style>
+    </head>
+    <body style="">
+<div id="header"></div>
+<div id="content">
+</div>
+<div id="bottom"></div>
+        <script type="text/javascript">
+
+$(document).ready(function(){
+
+// var windowht = $(window).height();
+//   windowht = windowht - $(".height100");
+//   $('.left').css("height", windowht + "px");
+//$('#content').height($(window).height() - $('#header').height());
+
+  $(function () {
+   
+   
+    var resizeDiv = function (object) {
+        $('#content').height($(window).height() - 200);
+		 //$('#content').height($(window).height() - $('#bottom').height());
+    };
+
+
+    $(window).ready(function () {
+        resizeDiv($('#content'));
+    });
+
+    $(window).bind("resize", function () {
+        resizeDiv($('#content'));
+    });
+
+}); 
+   
+});
+
+        </script> 
+		
+		
+	
+    </body>
+</html>
